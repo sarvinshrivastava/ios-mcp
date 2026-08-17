@@ -1,0 +1,46 @@
+{
+  "value": {
+    "type": "XCUIElementTypeApplication",
+    "label": "Unity Game",
+    "name": "Unity Game",
+    "value": null,
+    "rect": { "x": 0, "y": 0, "width": 844, "height": 390 },
+    "isEnabled": "1",
+    "isVisible": "1",
+    "children": [
+      {
+        "type": "XCUIElementTypeWindow",
+        "label": null,
+        "name": null,
+        "value": null,
+        "rect": { "x": 0, "y": 0, "width": 844, "height": 390 },
+        "isEnabled": "1",
+        "isVisible": "1",
+        "children": [
+          {
+            "type": "XCUIElementTypeOther",
+            "label": null,
+            "name": null,
+            "value": null,
+            "rect": { "x": 0, "y": 0, "width": 844, "height": 390 },
+            "isEnabled": "1",
+            "isVisible": "1",
+            "children": [
+              {
+                "type": "XCUIElementTypeImage",
+                "label": null,
+                "name": null,
+                "value": null,
+                "rect": { "x": 0, "y": 0, "width": 844, "height": 390 },
+                "isEnabled": "1",
+                "isVisible": "1",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sessionId": "F1E2D3C4-0000-4000-8000-ABCDEF012345"
+}

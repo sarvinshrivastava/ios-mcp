@@ -1,0 +1,24 @@
+{
+  "name": "ios-mcp",
+  "version": "0.1.0",
+  "description": "Playwright-style MCP server for driving iOS simulators over WebDriverAgent — semantic, element-aware automation for any app (native / React Native), mirroring android-mcp's 14-tool surface.",
+  "type": "module",
+  "module": "src/index.ts",
+  "bin": {
+    "ios-mcp": "src/index.ts"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "setup": "bun run scripts/setup.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "sharp": "^0.33.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.5.0"
+  }
+}

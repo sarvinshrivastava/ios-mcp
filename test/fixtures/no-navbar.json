@@ -1,0 +1,52 @@
+{
+  "type": "XCUIElementTypeApplication",
+  "label": "Habuild",
+  "name": "Habuild",
+  "value": null,
+  "rect": { "x": 0, "y": 0, "width": 390, "height": 844 },
+  "isEnabled": true,
+  "isVisible": true,
+  "children": [
+    {
+      "type": "XCUIElementTypeWindow",
+      "label": null,
+      "name": null,
+      "value": null,
+      "rect": { "x": 0, "y": 0, "width": 390, "height": 844 },
+      "isEnabled": true,
+      "isVisible": true,
+      "children": [
+        {
+          "type": "XCUIElementTypeStaticText",
+          "label": "Welcome back",
+          "name": null,
+          "value": "Welcome back",
+          "rect": { "x": 24, "y": 80, "width": 200, "height": 30 },
+          "isEnabled": true,
+          "isVisible": true,
+          "children": []
+        },
+        {
+          "type": "XCUIElementTypeStaticText",
+          "label": "Sign in to continue",
+          "name": null,
+          "value": "Sign in to continue",
+          "rect": { "x": 24, "y": 120, "width": 200, "height": 20 },
+          "isEnabled": true,
+          "isVisible": true,
+          "children": []
+        },
+        {
+          "type": "XCUIElementTypeButton",
+          "label": "Sign In",
+          "name": "signin-button",
+          "value": null,
+          "rect": { "x": 16, "y": 600, "width": 358, "height": 48 },
+          "isEnabled": true,
+          "isVisible": true,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

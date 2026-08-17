@@ -1,0 +1,305 @@
+{
+  "value": {
+    "type": "XCUIElementTypeApplication",
+    "label": "Habuild",
+    "name": "Habuild",
+    "value": null,
+    "rect": { "x": 0, "y": 0, "width": 390, "height": 844 },
+    "isEnabled": "1",
+    "isVisible": "1",
+    "children": [
+      {
+        "type": "XCUIElementTypeWindow",
+        "label": null,
+        "name": null,
+        "value": null,
+        "rect": { "x": 0, "y": 0, "width": 390, "height": 844 },
+        "isEnabled": true,
+        "isVisible": true,
+        "children": [
+          {
+            "type": "XCUIElementTypeOther",
+            "label": null,
+            "name": null,
+            "value": null,
+            "rect": { "x": 0, "y": 0, "width": 390, "height": 844 },
+            "isEnabled": "1",
+            "isVisible": "1",
+            "children": [
+              {
+                "type": "XCUIElementTypeOther",
+                "label": null,
+                "name": "home-screen",
+                "value": null,
+                "rect": { "x": 0, "y": 0, "width": 390, "height": 844 },
+                "isEnabled": "1",
+                "isVisible": "1",
+                "children": [
+                  {
+                    "type": "XCUIElementTypeNavigationBar",
+                    "label": null,
+                    "name": "Home",
+                    "value": null,
+                    "rect": { "x": 0, "y": 47, "width": 390, "height": 44 },
+                    "isEnabled": "1",
+                    "isVisible": "1",
+                    "children": [
+                      {
+                        "type": "XCUIElementTypeButton",
+                        "label": "Back",
+                        "name": "back-button",
+                        "value": null,
+                        "rect": { "x": 8, "y": 52, "width": 44, "height": 36 },
+                        "isEnabled": "1",
+                        "isVisible": "1",
+                        "children": []
+                      },
+                      {
+                        "type": "XCUIElementTypeStaticText",
+                        "label": "Home",
+                        "name": null,
+                        "value": "Home",
+                        "rect": { "x": 170, "y": 58, "width": 50, "height": 22 },
+                        "isEnabled": "1",
+                        "isVisible": true,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "XCUIElementTypeScrollView",
+                    "label": null,
+                    "name": null,
+                    "value": null,
+                    "rect": { "x": 0, "y": 91, "width": 390, "height": 753 },
+                    "isEnabled": "1",
+                    "isVisible": "1",
+                    "children": [
+                      {
+                        "type": "XCUIElementTypeOther",
+                        "label": null,
+                        "name": null,
+                        "value": null,
+                        "rect": { "x": 0, "y": 91, "width": 390, "height": 753 },
+                        "isEnabled": "1",
+                        "isVisible": "1",
+                        "children": [
+                          {
+                            "type": "XCUIElementTypeCell",
+                            "label": null,
+                            "name": "workout-card-1",
+                            "value": null,
+                            "rect": { "x": 16, "y": 120, "width": 358, "height": 80 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": [
+                              {
+                                "type": "XCUIElementTypeOther",
+                                "label": null,
+                                "name": null,
+                                "value": null,
+                                "rect": { "x": 24, "y": 126, "width": 340, "height": 68 },
+                                "isEnabled": "1",
+                                "isVisible": "1",
+                                "children": [
+                                  {
+                                    "type": "XCUIElementTypeStaticText",
+                                    "label": "Morning Yoga",
+                                    "name": null,
+                                    "value": "Morning Yoga",
+                                    "rect": { "x": 32, "y": 130, "width": 200, "height": 20 },
+                                    "isEnabled": "1",
+                                    "isVisible": "1",
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "XCUIElementTypeStaticText",
+                                    "label": "21 days — Beginner",
+                                    "name": null,
+                                    "value": "21 days — Beginner",
+                                    "rect": { "x": 32, "y": 155, "width": 200, "height": 18 },
+                                    "isEnabled": "1",
+                                    "isVisible": "1",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "XCUIElementTypeCell",
+                            "label": null,
+                            "name": "workout-card-2",
+                            "value": null,
+                            "rect": { "x": 16, "y": 210, "width": 358, "height": 80 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": [
+                              {
+                                "type": "XCUIElementTypeStaticText",
+                                "label": "Evening Stretch",
+                                "name": null,
+                                "value": "Evening Stretch",
+                                "rect": { "x": 32, "y": 220, "width": 200, "height": 20 },
+                                "isEnabled": "1",
+                                "isVisible": "1",
+                                "children": []
+                              },
+                              {
+                                "type": "XCUIElementTypeStaticText",
+                                "label": "14 days",
+                                "name": null,
+                                "value": "14 days",
+                                "rect": { "x": 32, "y": 245, "width": 200, "height": 18 },
+                                "isEnabled": "1",
+                                "isVisible": "1",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "XCUIElementTypeOther",
+                            "label": null,
+                            "name": "cta-wrapper",
+                            "value": null,
+                            "rect": { "x": 12, "y": 306, "width": 366, "height": 56 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": [
+                              {
+                                "type": "XCUIElementTypeButton",
+                                "label": "Start Workout",
+                                "name": "start-workout-button",
+                                "value": null,
+                                "rect": { "x": 16, "y": 310, "width": 358, "height": 48 },
+                                "isEnabled": "1",
+                                "isVisible": "1",
+                                "children": [
+                                  {
+                                    "type": "XCUIElementTypeStaticText",
+                                    "label": "Start Workout",
+                                    "name": null,
+                                    "value": "Start Workout",
+                                    "rect": { "x": 140, "y": 324, "width": 110, "height": 20 },
+                                    "isEnabled": "1",
+                                    "isVisible": "1",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "XCUIElementTypeTextField",
+                            "label": "Email",
+                            "name": "email-input",
+                            "value": "user@example.com",
+                            "rect": { "x": 16, "y": 380, "width": 358, "height": 44 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeSwitch",
+                            "label": "Enable notifications",
+                            "name": "notifications-toggle",
+                            "value": "1",
+                            "rect": { "x": 16, "y": 440, "width": 358, "height": 31 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeImage",
+                            "label": "Yoga hero",
+                            "name": "hero-image",
+                            "value": null,
+                            "rect": { "x": 16, "y": 480, "width": 358, "height": 100 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeButton",
+                            "label": "Play",
+                            "name": "play-button",
+                            "value": null,
+                            "rect": { "x": 16, "y": 590, "width": 120, "height": 40 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeStaticText",
+                            "label": "How to play tutorial",
+                            "name": null,
+                            "value": "How to play tutorial",
+                            "rect": { "x": 150, "y": 595, "width": 200, "height": 20 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeStaticText",
+                            "label": "This is an unusually long description label meant to exceed the eighty character clip limit ZANZIBAR",
+                            "name": null,
+                            "value": null,
+                            "rect": { "x": 16, "y": 640, "width": 358, "height": 30 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeStaticText",
+                            "label": "Version 1.2.3",
+                            "name": null,
+                            "value": "Version 1.2.3",
+                            "rect": { "x": 16, "y": 700, "width": 100, "height": 16 },
+                            "isEnabled": "1",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeButton",
+                            "label": "Continue",
+                            "name": "continue-button",
+                            "value": null,
+                            "rect": { "x": 16, "y": 740, "width": 358, "height": 48 },
+                            "isEnabled": "0",
+                            "isVisible": "1",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeButton",
+                            "label": "Hidden CTA",
+                            "name": "hidden-cta",
+                            "value": null,
+                            "rect": { "x": 16, "y": 900, "width": 358, "height": 48 },
+                            "isEnabled": "1",
+                            "isVisible": "0",
+                            "children": []
+                          },
+                          {
+                            "type": "XCUIElementTypeStaticText",
+                            "label": "Offscreen text",
+                            "name": null,
+                            "value": "Offscreen text",
+                            "rect": { "x": 16, "y": 960, "width": 200, "height": 20 },
+                            "isEnabled": "1",
+                            "isVisible": false,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sessionId": "F1E2D3C4-0000-4000-8000-ABCDEF012345"
+}
