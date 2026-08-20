@@ -1,6 +1,7 @@
 /**
- * device.ts — WDA-free test utilities that earn their place by condensing or
- * composing, never by 1:1 wrapping a simctl command.
+ * device.ts — WDA-free test utilities for SIMULATORS that earn their place by
+ * condensing or composing, never by 1:1 wrapping a simctl command. The device
+ * equivalents live in devicectl.ts; backend.ts picks between them.
  *
  *   read_syslog → predicate-filters the unified-log firehose down to one app's
  *                 lines and auto-flags crashes from ~/Library/Logs/DiagnosticReports.
@@ -15,6 +16,13 @@ import { readdir, rm, stat } from "node:fs/promises";
 import { homedir } from "node:os";
 import { isAbsolute, join } from "node:path";
 import { launchApp, run, simctl, terminateApp } from "./simctl.ts";
+import {
+  crashProcess,
+  crashReason,
+  crashTimestamp,
+  parseIps,
+  type CrashReport,
+} from "./crash.ts";
 
 /**
  * Resolve a bundle id to its executable name (what the unified log calls the
@@ -23,7 +31,7 @@ import { launchApp, run, simctl, terminateApp } from "./simctl.ts";
  * Verified on Xcode 26.6: `CFBundleExecutable = Preferences;` (quoted when the
  * name has spaces/dots).
  */
-async function executableName(udid: string, bundleId: string): Promise<string> {
+export async function executableName(udid: string, bundleId: string): Promise<string> {
   const info = await simctl(udid, ["appinfo", udid, bundleId]);
   const m = info.match(/CFBundleExecutable\s*=\s*"?([^";\n]+)"?\s*;/);
   if (!m) {
@@ -32,15 +40,6 @@ async function executableName(udid: string, bundleId: string): Promise<string> {
     );
   }
   return m[1].trim();
-}
-
-export interface CrashReport {
-  /** Absolute path of the .ips report. */
-  path: string;
-  /** Best-effort one-line reason (exception type/message or termination indicator). */
-  reason: string;
-  /** ISO timestamp of the crash (report header, else file mtime). */
-  at: string;
 }
 
 export interface SyslogOptions {
@@ -148,33 +147,16 @@ async function scanCrashReports(
     }
     if (mtime < cutoff) continue;
 
-    let header: Record<string, unknown> = {};
-    let body: Record<string, unknown> = {};
+    let parsed;
     try {
-      const raw = await Bun.file(path).text();
-      const nl = raw.indexOf("\n");
-      try {
-        header = JSON.parse(nl === -1 ? raw : raw.slice(0, nl));
-      } catch {
-        /* header unreadable — fall through to filename match */
-      }
-      if (nl !== -1) {
-        try {
-          body = JSON.parse(raw.slice(nl));
-        } catch {
-          /* body unreadable — header may still identify the process */
-        }
-      }
+      parsed = parseIps(await Bun.file(path).text());
     } catch {
       continue; // unreadable file (permissions) — skip
     }
+    const { header, body } = parsed;
 
     // Does this report belong to our process?
-    const procName =
-      (body.procName as string) ||
-      (header.name as string) ||
-      (header.app_name as string) ||
-      "";
+    const procName = crashProcess(parsed);
     const matchesName = procName === executable || name.includes(executable);
     if (!matchesName) continue;
 
@@ -189,57 +171,14 @@ async function scanCrashReports(
 
     crashes.push({
       path,
-      reason: crashReason(header, body),
+      reason: crashReason(parsed),
       at: crashTimestamp(header, mtime),
     });
   }
   return crashes.sort((a, b) => a.at.localeCompare(b.at));
 }
 
-/** One line that tells the agent WHY it crashed, best field available first. */
-function crashReason(
-  header: Record<string, unknown>,
-  body: Record<string, unknown>,
-): string {
-  const exc = body.exception as
-    | { type?: string; subtype?: string; message?: string; signal?: string }
-    | undefined;
-  if (exc?.type) {
-    const parts = [exc.type];
-    if (exc.signal) parts.push(`(${exc.signal})`);
-    else if (exc.subtype) parts.push(`(${exc.subtype})`);
-    if (exc.message) parts.push(`— ${exc.message}`);
-    return parts.join(" ");
-  }
-  const term = body.termination as
-    { indicator?: string; namespace?: string } | undefined;
-  if (term?.indicator) {
-    return term.namespace
-      ? `${term.namespace}: ${term.indicator}`
-      : term.indicator;
-  }
-  if (header.bug_type) return `bug_type ${header.bug_type}`;
-  return "unknown (open the report)";
-}
 
-/** Crash time: header `timestamp` ("2026-08-17 10:54:02.00 +0530"), else mtime. */
-function crashTimestamp(
-  header: Record<string, unknown>,
-  mtimeMs: number,
-): string {
-  const ts = header.timestamp as string | undefined;
-  if (ts) {
-    // "2026-08-17 10:54:02.00 +0530" — drop the nonstandard fraction, T-join
-    // date and time, glue the offset on: "2026-08-17T10:54:02+0530".
-    const norm = ts
-      .replace(/\.\d+(?= )/, "")
-      .replace(" ", "T")
-      .replace(" ", "");
-    const parsed = Date.parse(norm);
-    if (!Number.isNaN(parsed)) return new Date(parsed).toISOString();
-  }
-  return new Date(mtimeMs).toISOString();
-}
 
 export interface ResetAppOptions {
   /** Uninstall + install `appPath` instead of wiping the data container. */

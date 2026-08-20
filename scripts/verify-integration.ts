@@ -5,9 +5,10 @@
  * fixture assumptions can be diffed against reality.
  */
 
-import { listDevices, launchApp } from "../src/simctl.ts";
+import { listDevices } from "../src/simctl.ts";
+import { launchApp, readSyslog } from "../src/backend.ts";
 import { ensureWda } from "../src/wda.ts";
-import { getTargetUdid } from "../src/target.ts";
+import { getTarget } from "../src/target.ts";
 import {
   snapshot,
   currentApp,
@@ -17,7 +18,6 @@ import {
   deviceScale,
 } from "../src/actions.ts";
 import { screenshot } from "../src/screenshot.ts";
-import { readSyslog } from "../src/device.ts";
 import { clipLabel } from "../src/uitree.ts";
 
 const BUNDLE = process.argv[2] || "com.habuild.yatraready";
@@ -27,14 +27,14 @@ console.log(
   "Booted sims:",
   booted.map((d) => `${d.name} ${d.iosVersion} ${d.udid}`),
 );
-const udid = await getTargetUdid();
-console.log("Target:", udid);
+const device = await getTarget();
+console.log("Target:", `${device.name} (${device.kind})`);
 
-const pid = await launchApp(udid, BUNDLE);
+const pid = await launchApp(device, BUNDLE);
 console.log(`Launched ${BUNDLE} pid=${pid}`);
 await Bun.sleep(4000); // app settle
 
-const wda = await ensureWda(udid);
+const wda = await ensureWda(device);
 console.log("WDA ready. scale =", await deviceScale(wda));
 
 // Raw dump for uitree-assumption diffing.
@@ -58,7 +58,7 @@ for (const el of snap.elements.slice(0, 25)) {
 
 console.log("\ncurrent_app:", await currentApp());
 
-const shot = await screenshot(udid);
+const shot = await screenshot(device);
 console.log("screenshot:", shot);
 
 // Tap the first interactive element and verify the signature changes or not.
@@ -85,7 +85,7 @@ console.log({
 });
 
 console.log("\nread_syslog (app-scoped, 60s):");
-const log = await readSyslog(udid, {
+const log = await readSyslog(device, {
   bundleId: BUNDLE,
   sinceSeconds: 60,
   lines: 5,

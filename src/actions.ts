@@ -10,7 +10,7 @@
  */
 
 import { ensureWda, type WdaClient } from "./wda.ts";
-import { getTargetUdid } from "./target.ts";
+import { getTarget } from "./target.ts";
 import { captureFrame, type Frame } from "./screenshot.ts";
 import {
   condenseTree,
@@ -39,7 +39,7 @@ export async function snapshot(): Promise<Snapshot> {
 }
 
 async function client(): Promise<WdaClient> {
-  return ensureWda(await getTargetUdid());
+  return ensureWda(await getTarget());
 }
 
 /** Device scale (points → pixels multiplier), cached per client. */
@@ -305,7 +305,7 @@ async function pixelFingerprint(path: string): Promise<string> {
 export async function fullPageScreenshot(
   maxFrames = 10,
 ): Promise<FullPageResult> {
-  const udid = await getTargetUdid();
+  const target = await getTarget();
   const wda = await client();
 
   const frames: Frame[] = [];
@@ -314,7 +314,7 @@ export async function fullPageScreenshot(
 
   for (let i = 0; i < maxFrames; i++) {
     const frame = await captureFrame(
-      udid,
+      target,
       `frame-${String(i + 1).padStart(2, "0")}`,
     );
     frames.push(frame);

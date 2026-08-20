@@ -145,3 +145,166 @@ export async function listApps(deviceCtlId: string): Promise<InstalledApp[]> {
     executable: (a.url ?? "").replace(/\/$/, "").split("/").pop()?.replace(/\.app$/, "") ?? "",
   }));
 }
+
+// ---------------------------------------------------------------------------
+// App lifecycle
+// ---------------------------------------------------------------------------
+
+/** Launch an app and return its pid. */
+export async function launchApp(
+  deviceCtlId: string,
+  bundleId: string,
+): Promise<number> {
+  const r = await json<any>(
+    ["device", "process", "launch", "--terminate-existing", "-d", deviceCtlId, bundleId],
+    120_000,
+  );
+  const pid = r?.process?.processIdentifier;
+  if (typeof pid !== "number") {
+    throw new Error(`devicectl launched ${bundleId} but reported no pid`);
+  }
+  return pid;
+}
+
+/** Terminate every running instance of an app. Tolerates "not running". */
+export async function terminateApp(
+  deviceCtlId: string,
+  bundleId: string,
+): Promise<void> {
+  // There is no terminate-by-bundle-id; find the pid first, then signal it.
+  const r = await json<{ runningProcesses?: any[] }>(
+    ["device", "info", "processes", "-d", deviceCtlId, "--filter", `executable.path CONTAINS '${bundleId}'`],
+    90_000,
+  ).catch(() => ({ runningProcesses: [] as any[] }));
+  for (const proc of r.runningProcesses ?? []) {
+    const pid = proc.processIdentifier;
+    if (typeof pid !== "number") continue;
+    await json(["device", "process", "signal", "-d", deviceCtlId, "--signal", "SIGKILL", "--pid", String(pid)], 60_000).catch(
+      () => {},
+    );
+  }
+}
+
+export async function installApp(deviceCtlId: string, appPath: string): Promise<void> {
+  await json(["device", "install", "app", "-d", deviceCtlId, appPath], 600_000);
+}
+
+export async function uninstallApp(deviceCtlId: string, bundleId: string): Promise<void> {
+  await json(["device", "uninstall", "app", "-d", deviceCtlId, bundleId], 180_000);
+}
+
+// ---------------------------------------------------------------------------
+// Crash reports
+// ---------------------------------------------------------------------------
+
+export interface DeviceFile {
+  /** Path relative to the domain root, e.g. "Retired/Nidra-2026-08-20-…ips". */
+  name: string;
+  sizeBytes: number;
+  modifiedAt: Date | null;
+}
+
+/**
+ * List files in the device's crash-report domain.
+ *
+ * This is the one crash source that works with no cable and no root, which is
+ * why it carries device crash reporting on its own (see readSyslog: the unified
+ * log itself needs either USB or root).
+ */
+export async function listCrashFiles(deviceCtlId: string): Promise<DeviceFile[]> {
+  const r = await json<{ files?: any[] }>(
+    ["device", "info", "files", "-d", deviceCtlId, "--domain-type", "systemCrashLogs"],
+    120_000,
+  );
+  return (r.files ?? []).map((f) => ({
+    name: f.path ?? f.name ?? "",
+    sizeBytes: typeof f.size === "number" ? f.size : 0,
+    // devicectl reports epoch seconds as a float.
+    modifiedAt:
+      typeof f.modificationDate === "number"
+        ? new Date(f.modificationDate * 1000)
+        : null,
+  }));
+}
+
+/** Copy one crash report off the device. Returns the local path. */
+export async function copyCrashFile(
+  deviceCtlId: string,
+  name: string,
+  destDir: string,
+): Promise<string> {
+  const local = join(destDir, name.split("/").pop()!);
+  await json(
+    [
+      "device", "copy", "from",
+      "-d", deviceCtlId,
+      "--domain-type", "systemCrashLogs",
+      "--source", name,
+      "--destination", local,
+    ],
+    180_000,
+  );
+  return local;
+}
+
+// ---------------------------------------------------------------------------
+// usbmux (cable-only capabilities)
+// ---------------------------------------------------------------------------
+
+/**
+ * Is this device visible to usbmuxd — i.e. attached by cable and trusted?
+ *
+ * A device paired over the local network is invisible to usbmux even though
+ * devicectl talks to it happily (`transportType: "localNetwork"`), so this is
+ * the gate for everything that rides usbmux: `iproxy` port forwarding and
+ * `idevicesyslog`. It never blocks a capability that has another route.
+ */
+export async function usbmuxSees(udid: string): Promise<boolean> {
+  const proc = Bun.spawn(["idevice_id", "-l"], { stdout: "pipe", stderr: "pipe" });
+  const [out, code] = await Promise.all([
+    new Response(proc.stdout).text(),
+    proc.exited,
+  ]).catch(() => ["", 1] as [string, number]); // libimobiledevice not installed
+  if (code !== 0) return false;
+  return out
+    .split("\n")
+    .map((l) => l.trim().toLowerCase())
+    .includes(udid.toLowerCase());
+}
+
+export interface SyslogLinesOptions {
+  /** Restrict to one process (the app's executable name). */
+  process?: string;
+  /** Case-insensitive substring filter on the captured lines. */
+  filter?: string;
+  /** How long to capture for. usbmux streams live; there is no history. */
+  seconds: number;
+  /** Max lines returned (most recent kept). */
+  lines: number;
+}
+
+/**
+ * Capture device syslog lines with `idevicesyslog`, LIVE for a few seconds.
+ *
+ * This is a stream, not a query: unlike a simulator (`log show --last 120s`)
+ * there is no unprivileged way to read the past — `log collect --device-udid`
+ * exits with "Must be root to collect logs from attached device". So the window
+ * is forward-looking, and callers say so in their output.
+ */
+export async function syslogLines(
+  udid: string,
+  opts: SyslogLinesOptions,
+): Promise<string[]> {
+  const args = ["idevicesyslog", "-u", udid, "-q"];
+  if (opts.process) args.push("-p", opts.process);
+  const proc = Bun.spawn(args, { stdout: "pipe", stderr: "pipe" });
+  const collected = new Response(proc.stdout).text();
+  await Bun.sleep(Math.min(Math.max(opts.seconds, 1), 30) * 1000);
+  proc.kill();
+  let lines = (await collected).split("\n").map((l) => l.trimEnd()).filter((l) => l.trim());
+  if (opts.filter) {
+    const f = opts.filter.toLowerCase();
+    lines = lines.filter((l) => l.toLowerCase().includes(f));
+  }
+  return lines.slice(-opts.lines);
+}

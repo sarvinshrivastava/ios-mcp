@@ -20,7 +20,7 @@
 import { join } from "node:path";
 import { homedir } from "node:os";
 import { ensureBooted, listDevices, xcrun } from "./simctl.ts";
-import { listDevices as listPhysicalDevices } from "./devicectl.ts";
+import { listDevices as listPhysicalDevices, usbmuxSees } from "./devicectl.ts";
 
 const PORT_BASE = parseInt(process.env.IOS_MCP_WDA_PORT_BASE || "8100", 10);
 const CACHE_ROOT =
@@ -231,6 +231,22 @@ export class WdaClient {
     return this.get("/wda/activeAppInfo");
   }
 
+  /**
+   * Viewport PNG as raw bytes.
+   *
+   * WDA answers `/screenshot` with base64 on every backend, which is why it —
+   * not `simctl io` — is the capture path: a real device has no simctl, and one
+   * code path cannot drift from itself. The bytes are device PIXELS, preserving
+   * the "agents only ever see screenshot pixels" contract.
+   */
+  async screenshot(timeoutMs = 30_000): Promise<Buffer> {
+    const base64 = await this.get<string>("/screenshot", timeoutMs);
+    if (typeof base64 !== "string" || base64.length === 0) {
+      throw new Error("WDA /screenshot returned no image data");
+    }
+    return Buffer.from(base64, "base64");
+  }
+
   /** Screen info: { scale, statusBarSize } — scale converts points→pixels. */
   async screenInfo(): Promise<{
     scale: number;
@@ -372,29 +388,6 @@ async function spawnRunner(
   // handler (shutdownWda) still kills it when we terminate.
   child.unref();
   return child;
-}
-
-/**
- * Is this device visible to usbmuxd (i.e. attached by cable and trusted)?
- *
- * Only then can `iproxy` forward a port. A device paired over the local network
- * is invisible to usbmux even though `devicectl` talks to it happily — so this
- * decides which reachability path a device gets, and never blocks one.
- */
-async function usbmuxSees(udid: string): Promise<boolean> {
-  const { stdout, exitCode } = await (async () => {
-    const proc = Bun.spawn(["idevice_id", "-l"], { stdout: "pipe", stderr: "pipe" });
-    const [out, code] = await Promise.all([
-      new Response(proc.stdout).text(),
-      proc.exited,
-    ]);
-    return { stdout: out, exitCode: code };
-  })().catch(() => ({ stdout: "", exitCode: 1 })); // iproxy/libimobiledevice absent
-  if (exitCode !== 0) return false;
-  return stdout
-    .split("\n")
-    .map((l) => l.trim().toLowerCase())
-    .includes(udid.toLowerCase());
 }
 
 /** Forward localhost:<localPort> to <device>:8100 over usbmux. */

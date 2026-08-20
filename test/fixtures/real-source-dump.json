@@ -1,7 +1,7 @@
 {
   "customActions": null,
   "nativeFrame": "{{0, 0}, {402, 874}}",
-  "label": "Char Dham Ready",
+  "label": "Nidra",
   "rawIdentifier": null,
   "traits": "",
   "frame": "{{0, 0}, {402, 874}}",
@@ -29,7 +29,7 @@
           "rawIdentifier": null,
           "traits": "",
           "frame": "{{0, 0}, {402, 874}}",
-          "isVisible": "0",
+          "isVisible": "1",
           "type": "Other",
           "value": null,
           "isEnabled": "1",
@@ -41,33 +41,11 @@
               "rawIdentifier": null,
               "traits": "",
               "frame": "{{0, 0}, {402, 874}}",
-              "isVisible": "0",
+              "isVisible": "1",
               "type": "Other",
               "value": null,
               "isEnabled": "1",
               "children": [
-                {
-                  "customActions": null,
-                  "nativeFrame": "{{-402, -874}, {1206, 2622}}",
-                  "label": null,
-                  "rawIdentifier": null,
-                  "traits": "",
-                  "frame": "{{-402, -874}, {1206, 2622}}",
-                  "isVisible": "0",
-                  "type": "Other",
-                  "value": null,
-                  "isEnabled": "1",
-                  "isAccessible": "0",
-                  "isNativeAccessibilityElement": "0",
-                  "isFocused": "0",
-                  "name": null,
-                  "rect": {
-                    "y": -874,
-                    "x": -402,
-                    "width": 1206,
-                    "height": 2622
-                  }
-                },
                 {
                   "customActions": null,
                   "nativeFrame": "{{0, 0}, {402, 874}}",
@@ -75,7 +53,7 @@
                   "rawIdentifier": null,
                   "traits": "",
                   "frame": "{{0, 0}, {402, 874}}",
-                  "isVisible": "0",
+                  "isVisible": "1",
                   "type": "Other",
                   "value": null,
                   "isEnabled": "1",
@@ -87,220 +65,10 @@
                       "rawIdentifier": null,
                       "traits": "",
                       "frame": "{{0, 0}, {402, 874}}",
-                      "isVisible": "0",
+                      "isVisible": "1",
                       "type": "Other",
                       "value": null,
                       "isEnabled": "1",
-                      "children": [
-                        {
-                          "customActions": null,
-                          "nativeFrame": "{{0, 0}, {402, 874}}",
-                          "label": null,
-                          "rawIdentifier": null,
-                          "traits": "",
-                          "frame": "{{0, 0}, {402, 874}}",
-                          "isVisible": "0",
-                          "type": "Other",
-                          "value": null,
-                          "isEnabled": "1",
-                          "children": [
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{0, 0}, {402, 874}}",
-                              "label": null,
-                              "rawIdentifier": null,
-                              "traits": "",
-                              "frame": "{{0, 0}, {402, 874}}",
-                              "isVisible": "0",
-                              "type": "Other",
-                              "value": null,
-                              "isEnabled": "1",
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": null,
-                              "rect": {
-                                "y": 0,
-                                "x": 0,
-                                "width": 402,
-                                "height": 874
-                              }
-                            },
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{0, 0}, {402, 874}}",
-                              "label": null,
-                              "rawIdentifier": null,
-                              "traits": "",
-                              "frame": "{{0, 0}, {402, 874}}",
-                              "isVisible": "0",
-                              "type": "Other",
-                              "value": null,
-                              "isEnabled": "1",
-                              "children": [
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 0}, {402, 874}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 0}, {402, 874}}",
-                                  "isVisible": "0",
-                                  "type": "Other",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 0}, {402, 874}}",
-                                      "label": null,
-                                      "rawIdentifier": null,
-                                      "traits": "",
-                                      "frame": "{{0, 0}, {402, 874}}",
-                                      "isVisible": "0",
-                                      "type": "Other",
-                                      "value": null,
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": null,
-                                      "rect": {
-                                        "y": 0,
-                                        "x": 0,
-                                        "width": 402,
-                                        "height": 874
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "0",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 0,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 874
-                                  }
-                                }
-                              ],
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": null,
-                              "rect": {
-                                "y": 0,
-                                "x": 0,
-                                "width": 402,
-                                "height": 874
-                              }
-                            },
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{20, 362.66665649414062}, {362, 28.66668701171875}}",
-                              "label": "App entry not found",
-                              "rawIdentifier": null,
-                              "traits": "StaticText",
-                              "frame": "{{20, 362}, {362, 30}}",
-                              "isVisible": "0",
-                              "type": "StaticText",
-                              "value": "App entry not found",
-                              "isEnabled": "1",
-                              "children": [
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{20, 362.66665649414062}, {362, 28.66668701171875}}",
-                                  "label": "App entry not found",
-                                  "rawIdentifier": null,
-                                  "traits": "StaticText",
-                                  "frame": "{{20, 362}, {362, 30}}",
-                                  "isVisible": "0",
-                                  "type": "StaticText",
-                                  "value": "App entry not found",
-                                  "isEnabled": "1",
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "1",
-                                  "isFocused": "0",
-                                  "name": "App entry not found",
-                                  "rect": {
-                                    "y": 362,
-                                    "x": 20,
-                                    "width": 362,
-                                    "height": 30
-                                  }
-                                }
-                              ],
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": "App entry not found",
-                              "rect": {
-                                "y": 362,
-                                "x": 20,
-                                "width": 362,
-                                "height": 30
-                              }
-                            },
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{20, 415.33334350585938}, {362, 95.666656494140625}}",
-                              "label": "The app entry point named \"main\" was not registered. This may be due to an uncaught error thrown from a module's top-level code. Refer to the CLI logs and the native device logs for more detail.",
-                              "rawIdentifier": null,
-                              "traits": "StaticText",
-                              "frame": "{{20, 415}, {362, 96}}",
-                              "isVisible": "0",
-                              "type": "StaticText",
-                              "value": "The app entry point named \"main\" was not registered. This may be due to an uncaught error thrown from a module's top-level code. Refer to the CLI logs and the native device logs for more detail.",
-                              "isEnabled": "1",
-                              "children": [
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{20, 415.33334350585938}, {362, 95.666656494140625}}",
-                                  "label": "The app entry point named \"main\" was not registered. This may be due to an uncaught error thrown from a module's top-level code. Refer to the CLI logs and the native device logs for more detail.",
-                                  "rawIdentifier": null,
-                                  "traits": "StaticText",
-                                  "frame": "{{20, 415}, {362, 96}}",
-                                  "isVisible": "0",
-                                  "type": "StaticText",
-                                  "value": "The app entry point named \"main\" was not registered. This may be due to an uncaught error thrown from a module's top-level code. Refer to the CLI logs and the native device logs for more detail.",
-                                  "isEnabled": "1",
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "1",
-                                  "isFocused": "0",
-                                  "name": "The app entry point named \"main\" was not registered. This may be due to an uncaught error thrown from a module's top-level code. Refer to the CLI logs and the native device logs for more detail.",
-                                  "rect": {
-                                    "y": 415,
-                                    "x": 20,
-                                    "width": 362,
-                                    "height": 96
-                                  }
-                                }
-                              ],
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": "The app entry point named \"main\" was not registered. This may be due to an uncaught error thrown from a module's top-level code. Refer to the CLI logs and the native device logs for more detail.",
-                              "rect": {
-                                "y": 415,
-                                "x": 20,
-                                "width": 362,
-                                "height": 96
-                              }
-                            }
-                          ],
-                          "isAccessible": "0",
-                          "isNativeAccessibilityElement": "0",
-                          "isFocused": "0",
-                          "name": null,
-                          "rect": {
-                            "y": 0,
-                            "x": 0,
-                            "width": 402,
-                            "height": 874
-                          }
-                        }
-                      ],
                       "isAccessible": "0",
                       "isNativeAccessibilityElement": "0",
                       "isFocused": "0",
@@ -347,1628 +115,6 @@
             "width": 402,
             "height": 874
           }
-        },
-        {
-          "customActions": null,
-          "nativeFrame": "{{0, 0}, {402, 874}}",
-          "label": null,
-          "rawIdentifier": null,
-          "traits": "",
-          "frame": "{{0, 0}, {402, 874}}",
-          "isVisible": "1",
-          "type": "Other",
-          "value": null,
-          "isEnabled": "1",
-          "children": [
-            {
-              "customActions": null,
-              "nativeFrame": "{{-402, -874}, {1206, 2622}}",
-              "label": null,
-              "rawIdentifier": null,
-              "traits": "",
-              "frame": "{{-402, -874}, {1206, 2622}}",
-              "isVisible": "0",
-              "type": "Other",
-              "value": null,
-              "isEnabled": "1",
-              "isAccessible": "0",
-              "isNativeAccessibilityElement": "0",
-              "isFocused": "0",
-              "name": null,
-              "rect": {
-                "y": -874,
-                "x": -402,
-                "width": 1206,
-                "height": 2622
-              }
-            },
-            {
-              "customActions": null,
-              "nativeFrame": "{{0, 62}, {402, 812}}",
-              "label": null,
-              "rawIdentifier": null,
-              "traits": "",
-              "frame": "{{0, 62}, {402, 812}}",
-              "isVisible": "1",
-              "type": "Other",
-              "value": null,
-              "isEnabled": "1",
-              "children": [
-                {
-                  "customActions": null,
-                  "nativeFrame": "{{0, 62}, {402, 812}}",
-                  "label": null,
-                  "rawIdentifier": null,
-                  "traits": "",
-                  "frame": "{{0, 62}, {402, 812}}",
-                  "isVisible": "1",
-                  "type": "Other",
-                  "value": null,
-                  "isEnabled": "1",
-                  "children": [
-                    {
-                      "customActions": null,
-                      "nativeFrame": "{{0, 62}, {402, 812}}",
-                      "label": null,
-                      "rawIdentifier": null,
-                      "traits": "",
-                      "frame": "{{0, 62}, {402, 812}}",
-                      "isVisible": "1",
-                      "type": "Other",
-                      "value": null,
-                      "isEnabled": "1",
-                      "children": [
-                        {
-                          "customActions": null,
-                          "nativeFrame": "{{0, 62}, {402, 812}}",
-                          "label": null,
-                          "rawIdentifier": null,
-                          "traits": "",
-                          "frame": "{{0, 62}, {402, 812}}",
-                          "isVisible": "1",
-                          "type": "Other",
-                          "value": null,
-                          "isEnabled": "1",
-                          "children": [
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{0, 62}, {402, 718}}",
-                              "label": null,
-                              "rawIdentifier": null,
-                              "traits": "",
-                              "frame": "{{0, 62}, {402, 718}}",
-                              "isVisible": "1",
-                              "type": "Table",
-                              "value": null,
-                              "isEnabled": "1",
-                              "children": [
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 62}, {402, 251}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 62}, {402, 251}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 62}, {362, 251}}",
-                                      "label": "[runtime not ready]: console.error: React Native version mismatch.\n\nJavaScript version: 0.83.2 Native version: 0.81.5\n\nMake sure that you have rebuilt the native code. If the problem persists try clearing the Watchman and packager caches with `watchman watch-del-all && npx react-native start --reset-cache`.",
-                                      "rawIdentifier": "redbox-error",
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 62}, {362, 251}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "[runtime not ready]: console.error: React Native version mismatch.\n\nJavaScript version: 0.83.2 Native version: 0.81.5\n\nMake sure that you have rebuilt the native code. If the problem persists try clearing the Watchman and packager caches with `watchman watch-del-all && npx react-native start --reset-cache`.",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "redbox-error",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 251
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 62,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 251
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 313}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 313}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 321.66666666666669}, {84.333333333333329, 16.333333333333314}}",
-                                      "label": "_construct",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 321}, {85, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "_construct",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "_construct",
-                                      "rect": {
-                                        "y": 321,
-                                        "x": 20,
-                                        "width": 85,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 340.33333333333331}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13591:66",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 340}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13591:66",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13591:66",
-                                      "rect": {
-                                        "y": 340,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 313,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 363}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 363}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20.000000000000004, 371.66666666666669}, {59.333333333333343, 16.333333333333314}}",
-                                      "label": "Wrapper",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 371}, {60, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "Wrapper",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "Wrapper",
-                                      "rect": {
-                                        "y": 371,
-                                        "x": 20,
-                                        "width": 60,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 390.33333333333331}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13563:24",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 390}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13563:24",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13563:24",
-                                      "rect": {
-                                        "y": 390,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 363,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 413}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 413}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 421.66666666666669}, {84.333333333333329, 16.333333333333314}}",
-                                      "label": "_callSuper",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 421}, {85, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "_callSuper",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "_callSuper",
-                                      "rect": {
-                                        "y": 421,
-                                        "x": 20,
-                                        "width": 85,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 440.33333333333331}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:9695:109",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 440}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:9695:109",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:9695:109",
-                                      "rect": {
-                                        "y": 440,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 413,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 463}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 463}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{19.999999999999993, 471.66666666666669}, {118.33333333333331, 16.333333333333314}}",
-                                      "label": "SyntheticError",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{19, 471}, {120, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "SyntheticError",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "SyntheticError",
-                                      "rect": {
-                                        "y": 471,
-                                        "x": 19,
-                                        "width": 120,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 490.33333333333331}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13394:37",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 490}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13394:37",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13394:37",
-                                      "rect": {
-                                        "y": 490,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 463,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 513}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 513}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 521.66666666666674}, {202.33333333333334, 16.333333333333371}}",
-                                      "label": "reactConsoleErrorHandler",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 521}, {203, 18}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "reactConsoleErrorHandler",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "reactConsoleErrorHandler",
-                                      "rect": {
-                                        "y": 521,
-                                        "x": 20,
-                                        "width": 203,
-                                        "height": 18
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 540.33333333333326}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13512:32",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 540}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13512:32",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:13512:32",
-                                      "rect": {
-                                        "y": 540,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 513,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 563}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 563}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20.000000000000007, 571.66666666666674}, {109.66666666666669, 16.333333333333371}}",
-                                      "label": "checkVersions",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 571}, {110, 18}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "checkVersions",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "checkVersions",
-                                      "rect": {
-                                        "y": 571,
-                                        "x": 20,
-                                        "width": 110,
-                                        "height": 18
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 590.33333333333337}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:59114:19",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 590}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:59114:19",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:59114:19",
-                                      "rect": {
-                                        "y": 590,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 563,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 613}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 613}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 621.66666666666663}, {76, 16.333333333333371}}",
-                                      "label": "anonymous",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 621}, {76, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "anonymous",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "anonymous",
-                                      "rect": {
-                                        "y": 621,
-                                        "x": 20,
-                                        "width": 76,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 640.33333333333337}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:59094:39",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 640}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:59094:39",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:59094:39",
-                                      "rect": {
-                                        "y": 640,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 613,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 663}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 663}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 671.66666666666663}, {202.33333333333334, 16.333333333333371}}",
-                                      "label": "loadModuleImplementation",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 671}, {203, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "loadModuleImplementation",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "loadModuleImplementation",
-                                      "rect": {
-                                        "y": 671,
-                                        "x": 20,
-                                        "width": 203,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 690.33333333333337}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:257:40",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 690}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:257:40",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:257:40",
-                                      "rect": {
-                                        "y": 690,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 663,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 713}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 713}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 721.66666666666663}, {143.33333333333334, 16.333333333333371}}",
-                                      "label": "guardedLoadModule",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 721}, {144, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "guardedLoadModule",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "guardedLoadModule",
-                                      "rect": {
-                                        "y": 721,
-                                        "x": 20,
-                                        "width": 144,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 740.33333333333337}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:169:37",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 740}, {362, 14}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:169:37",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:169:37",
-                                      "rect": {
-                                        "y": 740,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 713,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 763}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 763}, {402, 50}}",
-                                  "isVisible": "1",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{19.999999999999993, 771.66666666666663}, {101.33333333333331, 16.333333333333371}}",
-                                      "label": "metroRequire",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{19, 771}, {103, 17}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "metroRequire",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "metroRequire",
-                                      "rect": {
-                                        "y": 771,
-                                        "x": 19,
-                                        "width": 103,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 790.33333333333337}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:80:91",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 790}, {362, 14}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:80:91",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:80:91",
-                                      "rect": {
-                                        "y": 790,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 763,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 813}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 813}, {402, 50}}",
-                                  "isVisible": "0",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 821.66666666666663}, {278.33333333333331, 16.333333333333371}}",
-                                      "label": "setUpDefaltReactNativeEnvironment",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 821}, {279, 17}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "setUpDefaltReactNativeEnvironment",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "setUpDefaltReactNativeEnvironment",
-                                      "rect": {
-                                        "y": 821,
-                                        "x": 20,
-                                        "width": 279,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{20, 840.33333333333337}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:29822:13",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{20, 840}, {362, 14}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:29822:13",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:29822:13",
-                                      "rect": {
-                                        "y": 840,
-                                        "x": 20,
-                                        "width": 362,
-                                        "height": 14
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 813,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 863}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 863}, {402, 50}}",
-                                  "isVisible": "0",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {76, 16.333333333333329}}",
-                                      "label": "anonymous",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {76, 17}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "anonymous",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "anonymous",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 76,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:29782:98",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {362, 13}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:29782:98",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:29782:98",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 362,
-                                        "height": 13
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 863,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 913}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 913}, {402, 50}}",
-                                  "isVisible": "0",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {202.33333333333334, 16.333333333333329}}",
-                                      "label": "loadModuleImplementation",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {203, 17}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "loadModuleImplementation",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "loadModuleImplementation",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 203,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:257:40",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {362, 13}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:257:40",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:257:40",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 362,
-                                        "height": 13
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 913,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 963}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 963}, {402, 50}}",
-                                  "isVisible": "0",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {143.33333333333334, 16.333333333333329}}",
-                                      "label": "guardedLoadModule",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {144, 17}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "guardedLoadModule",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "guardedLoadModule",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 144,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:162:46",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {362, 13}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:162:46",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:162:46",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 362,
-                                        "height": 13
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 963,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 1013}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 1013}, {402, 50}}",
-                                  "isVisible": "0",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {101.33333333333333, 16.333333333333329}}",
-                                      "label": "metroRequire",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {102, 17}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "metroRequire",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "metroRequire",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 102,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:80:91",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {362, 13}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:80:91",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:80:91",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 362,
-                                        "height": 13
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 1013,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 1063}, {402, 50}}",
-                                  "label": null,
-                                  "rawIdentifier": null,
-                                  "traits": "",
-                                  "frame": "{{0, 1063}, {402, 50}}",
-                                  "isVisible": "0",
-                                  "type": "Cell",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {50.666666666666664, 16.333333333333329}}",
-                                      "label": "global",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {51, 17}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "global",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "global",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 51,
-                                        "height": 17
-                                      }
-                                    },
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{0, 62}, {362, 13}}",
-                                      "label": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:300768:3",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{0, 62}, {362, 13}}",
-                                      "isVisible": "0",
-                                      "type": "StaticText",
-                                      "value": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:300768:3",
-                                      "isEnabled": "1",
-                                      "isAccessible": "1",
-                                      "isNativeAccessibilityElement": "1",
-                                      "isFocused": "0",
-                                      "name": "&platform=ios&dev=true&lazy=true&minify=false&inlineSourceMap=false&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server&app=com.habuild.yatraready&transform.routerRoot=app&transform.engine=hermes&transform.bytecode=1&unstable_transformProfile=hermes-stable:300768:3",
-                                      "rect": {
-                                        "y": 62,
-                                        "x": 0,
-                                        "width": 362,
-                                        "height": 13
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": null,
-                                  "rect": {
-                                    "y": 1063,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 50
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{369, 100}, {30, 680}}",
-                                  "label": "Vertical scroll bar, 2 pages",
-                                  "rawIdentifier": null,
-                                  "traits": "Adjustable",
-                                  "frame": "{{369, 100}, {30, 680}}",
-                                  "isVisible": "0",
-                                  "type": "Other",
-                                  "value": "0%",
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{396, 770}, {3, 7}}",
-                                      "label": null,
-                                      "rawIdentifier": null,
-                                      "traits": "",
-                                      "frame": "{{396, 770}, {3, 7}}",
-                                      "isVisible": "0",
-                                      "type": "Other",
-                                      "value": null,
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": null,
-                                      "rect": {
-                                        "y": 770,
-                                        "x": 396,
-                                        "width": 3,
-                                        "height": 7
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "0",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": "Vertical scroll bar, 2 pages",
-                                  "rect": {
-                                    "y": 100,
-                                    "x": 369,
-                                    "width": 30,
-                                    "height": 680
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 747}, {402, 30}}",
-                                  "label": "Horizontal scroll bar, 1 page",
-                                  "rawIdentifier": null,
-                                  "traits": "Adjustable",
-                                  "frame": "{{0, 747}, {402, 30}}",
-                                  "isVisible": "0",
-                                  "type": "Other",
-                                  "value": "0%",
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{392, 774}, {7, 3}}",
-                                      "label": null,
-                                      "rawIdentifier": null,
-                                      "traits": "",
-                                      "frame": "{{392, 774}, {7, 3}}",
-                                      "isVisible": "0",
-                                      "type": "Other",
-                                      "value": null,
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": null,
-                                      "rect": {
-                                        "y": 774,
-                                        "x": 392,
-                                        "width": 7,
-                                        "height": 3
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "0",
-                                  "isNativeAccessibilityElement": "0",
-                                  "isFocused": "0",
-                                  "name": "Horizontal scroll bar, 1 page",
-                                  "rect": {
-                                    "y": 747,
-                                    "x": 0,
-                                    "width": 402,
-                                    "height": 30
-                                  }
-                                }
-                              ],
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": null,
-                              "rect": {
-                                "y": 62,
-                                "x": 0,
-                                "width": 402,
-                                "height": 718
-                              }
-                            },
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{0, 779}, {402, 1}}",
-                              "label": null,
-                              "rawIdentifier": null,
-                              "traits": "",
-                              "frame": "{{0, 779}, {402, 1}}",
-                              "isVisible": "1",
-                              "type": "Other",
-                              "value": null,
-                              "isEnabled": "1",
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": null,
-                              "rect": {
-                                "y": 779,
-                                "x": 0,
-                                "width": 402,
-                                "height": 1
-                              }
-                            },
-                            {
-                              "customActions": null,
-                              "nativeFrame": "{{0, 780}, {402, 94}}",
-                              "label": null,
-                              "rawIdentifier": null,
-                              "traits": "",
-                              "frame": "{{0, 780}, {402, 94}}",
-                              "isVisible": "1",
-                              "type": "Other",
-                              "value": null,
-                              "isEnabled": "1",
-                              "children": [
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{0, 780}, {100.66666666666667, 60}}",
-                                  "label": "Dismiss (ESC)",
-                                  "rawIdentifier": "redbox-dismiss",
-                                  "traits": "Button",
-                                  "frame": "{{0, 780}, {101, 60}}",
-                                  "isVisible": "1",
-                                  "type": "Button",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{27, 794}, {47, 32}}",
-                                      "label": "Dismiss (ESC)",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{27, 794}, {47, 32}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "Dismiss (ESC)",
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": "Dismiss (ESC)",
-                                      "rect": {
-                                        "y": 794,
-                                        "x": 27,
-                                        "width": 47,
-                                        "height": 32
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "1",
-                                  "isFocused": "0",
-                                  "name": "redbox-dismiss",
-                                  "rect": {
-                                    "y": 780,
-                                    "x": 0,
-                                    "width": 101,
-                                    "height": 60
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{100.66666666666669, 780}, {100.33333333333331, 60}}",
-                                  "label": "Reload (⌘R)",
-                                  "rawIdentifier": "redbox-reload",
-                                  "traits": "Button",
-                                  "frame": "{{100, 780}, {101, 60}}",
-                                  "isVisible": "1",
-                                  "type": "Button",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{130, 794}, {42, 32}}",
-                                      "label": "Reload (⌘R)",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{130, 794}, {42, 32}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "Reload (⌘R)",
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": "Reload (⌘R)",
-                                      "rect": {
-                                        "y": 794,
-                                        "x": 130,
-                                        "width": 42,
-                                        "height": 32
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "1",
-                                  "isFocused": "0",
-                                  "name": "redbox-reload",
-                                  "rect": {
-                                    "y": 780,
-                                    "x": 100,
-                                    "width": 101,
-                                    "height": 60
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{201, 780}, {100.66666666666669, 60}}",
-                                  "label": "Copy (⌥⌘C)",
-                                  "rawIdentifier": "redbox-copy",
-                                  "traits": "Button",
-                                  "frame": "{{201, 780}, {101, 60}}",
-                                  "isVisible": "1",
-                                  "type": "Button",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{229.33333333333331, 794}, {44, 32}}",
-                                      "label": "Copy (⌥⌘C)",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{229, 794}, {45, 32}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "Copy (⌥⌘C)",
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": "Copy (⌥⌘C)",
-                                      "rect": {
-                                        "y": 794,
-                                        "x": 229,
-                                        "width": 45,
-                                        "height": 32
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "1",
-                                  "isFocused": "0",
-                                  "name": "redbox-copy",
-                                  "rect": {
-                                    "y": 780,
-                                    "x": 201,
-                                    "width": 101,
-                                    "height": 60
-                                  }
-                                },
-                                {
-                                  "customActions": null,
-                                  "nativeFrame": "{{301.66666666666669, 780}, {100.33333333333331, 60}}",
-                                  "label": "Extra Info (⌘E)",
-                                  "rawIdentifier": "redbox-extra",
-                                  "traits": "Button",
-                                  "frame": "{{301, 780}, {101, 60}}",
-                                  "isVisible": "1",
-                                  "type": "Button",
-                                  "value": null,
-                                  "isEnabled": "1",
-                                  "children": [
-                                    {
-                                      "customActions": null,
-                                      "nativeFrame": "{{322.66666666666669, 794}, {58, 32}}",
-                                      "label": "Extra Info (⌘E)",
-                                      "rawIdentifier": null,
-                                      "traits": "StaticText",
-                                      "frame": "{{322, 794}, {59, 32}}",
-                                      "isVisible": "1",
-                                      "type": "StaticText",
-                                      "value": "Extra Info (⌘E)",
-                                      "isEnabled": "1",
-                                      "isAccessible": "0",
-                                      "isNativeAccessibilityElement": "0",
-                                      "isFocused": "0",
-                                      "name": "Extra Info (⌘E)",
-                                      "rect": {
-                                        "y": 794,
-                                        "x": 322,
-                                        "width": 59,
-                                        "height": 32
-                                      }
-                                    }
-                                  ],
-                                  "isAccessible": "1",
-                                  "isNativeAccessibilityElement": "1",
-                                  "isFocused": "0",
-                                  "name": "redbox-extra",
-                                  "rect": {
-                                    "y": 780,
-                                    "x": 301,
-                                    "width": 101,
-                                    "height": 60
-                                  }
-                                }
-                              ],
-                              "isAccessible": "0",
-                              "isNativeAccessibilityElement": "0",
-                              "isFocused": "0",
-                              "name": null,
-                              "rect": {
-                                "y": 780,
-                                "x": 0,
-                                "width": 402,
-                                "height": 94
-                              }
-                            }
-                          ],
-                          "isAccessible": "0",
-                          "isNativeAccessibilityElement": "0",
-                          "isFocused": "0",
-                          "name": null,
-                          "rect": {
-                            "y": 62,
-                            "x": 0,
-                            "width": 402,
-                            "height": 812
-                          }
-                        }
-                      ],
-                      "isAccessible": "0",
-                      "isNativeAccessibilityElement": "0",
-                      "isFocused": "0",
-                      "name": null,
-                      "rect": {
-                        "y": 62,
-                        "x": 0,
-                        "width": 402,
-                        "height": 812
-                      }
-                    }
-                  ],
-                  "isAccessible": "0",
-                  "isNativeAccessibilityElement": "0",
-                  "isFocused": "0",
-                  "name": null,
-                  "rect": {
-                    "y": 62,
-                    "x": 0,
-                    "width": 402,
-                    "height": 812
-                  }
-                }
-              ],
-              "isAccessible": "0",
-              "isNativeAccessibilityElement": "0",
-              "isFocused": "0",
-              "name": null,
-              "rect": {
-                "y": 62,
-                "x": 0,
-                "width": 402,
-                "height": 812
-              }
-            }
-          ],
-          "isAccessible": "0",
-          "isNativeAccessibilityElement": "0",
-          "isFocused": "0",
-          "name": null,
-          "rect": {
-            "y": 0,
-            "x": 0,
-            "width": 402,
-            "height": 874
-          }
         }
       ],
       "isAccessible": "0",
@@ -1981,12 +127,154 @@
         "width": 402,
         "height": 874
       }
+    },
+    {
+      "customActions": null,
+      "nativeFrame": "{{0, 0}, {402, 87}}",
+      "label": null,
+      "rawIdentifier": null,
+      "traits": "",
+      "frame": "{{0, 0}, {402, 87}}",
+      "isVisible": "1",
+      "type": "Window",
+      "value": null,
+      "isEnabled": "1",
+      "children": [
+        {
+          "customActions": null,
+          "nativeFrame": "{{0, 0}, {402, 87}}",
+          "label": null,
+          "rawIdentifier": null,
+          "traits": "",
+          "frame": "{{0, 0}, {402, 87}}",
+          "isVisible": "1",
+          "type": "Other",
+          "value": null,
+          "isEnabled": "1",
+          "children": [
+            {
+              "customActions": null,
+              "nativeFrame": "{{0, 0}, {402, 87}}",
+              "label": null,
+              "rawIdentifier": null,
+              "traits": "",
+              "frame": "{{0, 0}, {402, 87}}",
+              "isVisible": "1",
+              "type": "Other",
+              "value": null,
+              "isEnabled": "1",
+              "children": [
+                {
+                  "customActions": null,
+                  "nativeFrame": "{{0, 0}, {402, 87}}",
+                  "label": null,
+                  "rawIdentifier": null,
+                  "traits": "",
+                  "frame": "{{0, 0}, {402, 87}}",
+                  "isVisible": "1",
+                  "type": "Other",
+                  "value": null,
+                  "isEnabled": "1",
+                  "children": [
+                    {
+                      "customActions": null,
+                      "nativeFrame": "{{0, 0}, {402, 87}}",
+                      "label": null,
+                      "rawIdentifier": null,
+                      "traits": "",
+                      "frame": "{{0, 0}, {402, 87}}",
+                      "isVisible": "1",
+                      "type": "Other",
+                      "value": null,
+                      "isEnabled": "1",
+                      "children": [
+                        {
+                          "customActions": null,
+                          "nativeFrame": "{{144.66666666666666, 67.666666666666671}, {112.66666666666666, 14.333333333333329}}",
+                          "label": "Downloading 34%…",
+                          "rawIdentifier": null,
+                          "traits": "StaticText",
+                          "frame": "{{144, 67}, {114, 15}}",
+                          "isVisible": "1",
+                          "type": "StaticText",
+                          "value": "Downloading 34%…",
+                          "isEnabled": "1",
+                          "isAccessible": "1",
+                          "isNativeAccessibilityElement": "1",
+                          "isFocused": "0",
+                          "name": "Downloading 34%…",
+                          "rect": {
+                            "y": 67,
+                            "x": 144,
+                            "width": 114,
+                            "height": 15
+                          }
+                        }
+                      ],
+                      "isAccessible": "0",
+                      "isNativeAccessibilityElement": "0",
+                      "isFocused": "0",
+                      "name": null,
+                      "rect": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 402,
+                        "height": 87
+                      }
+                    }
+                  ],
+                  "isAccessible": "0",
+                  "isNativeAccessibilityElement": "0",
+                  "isFocused": "0",
+                  "name": null,
+                  "rect": {
+                    "y": 0,
+                    "x": 0,
+                    "width": 402,
+                    "height": 87
+                  }
+                }
+              ],
+              "isAccessible": "0",
+              "isNativeAccessibilityElement": "0",
+              "isFocused": "0",
+              "name": null,
+              "rect": {
+                "y": 0,
+                "x": 0,
+                "width": 402,
+                "height": 87
+              }
+            }
+          ],
+          "isAccessible": "0",
+          "isNativeAccessibilityElement": "0",
+          "isFocused": "0",
+          "name": null,
+          "rect": {
+            "y": 0,
+            "x": 0,
+            "width": 402,
+            "height": 87
+          }
+        }
+      ],
+      "isAccessible": "0",
+      "isNativeAccessibilityElement": "0",
+      "isFocused": "0",
+      "name": null,
+      "rect": {
+        "y": 0,
+        "x": 0,
+        "width": 402,
+        "height": 87
+      }
     }
   ],
   "isAccessible": "0",
   "isNativeAccessibilityElement": "0",
   "isFocused": "0",
-  "name": "Char Dham Ready",
+  "name": "Nidra",
   "rect": {
     "y": 0,
     "x": 0,

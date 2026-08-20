@@ -1,5 +1,10 @@
 /**
- * screenshot.ts — single-viewport capture for iOS simulators.
+ * screenshot.ts — single-viewport capture, for simulators and real devices.
+ *
+ * Capture goes through WDA's `/screenshot` on BOTH backends. That is the whole
+ * point: a physical device has no `simctl io`, and one shared path cannot drift
+ * from itself. `simctl io` survives only as a simulator fallback for the case
+ * where WDA itself cannot produce an image.
  *
  * Captures go to disk (never inline base64) under IOS_MCP_OUTPUT_DIR, and the
  * caller gets the path plus the PNG's REAL pixel dimensions read back via
@@ -20,6 +25,8 @@ import { mkdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { simctl } from "./simctl.ts";
+import { ensureWda } from "./wda.ts";
+import type { Target } from "./target.ts";
 
 /** Where screenshots land. Created on demand. */
 export function outputDir(): string {
@@ -43,13 +50,16 @@ export interface Frame {
 let frameSeq = 0;
 
 /**
- * Capture the current viewport of a simulator to a timestamped PNG.
+ * Capture the current viewport to a timestamped PNG.
  *
  * The reusable primitive: `screenshot` calls it once; the full-page loop
  * (integration layer) calls it once per scroll step with a `tag` like
  * "frame-3" so a sequence sorts and reads naturally on disk.
  */
-export async function captureFrame(udid: string, tag?: string): Promise<Frame> {
+export async function captureFrame(
+  target: Target,
+  tag?: string,
+): Promise<Frame> {
   const dir = outputDir();
   await mkdir(dir, { recursive: true });
 
@@ -60,9 +70,15 @@ export async function captureFrame(udid: string, tag?: string): Promise<Frame> {
     : `screenshot-${stamp}-${seq}.png`;
   const path = join(dir, name);
 
-  // `simctl io <udid> screenshot <path>` — writes PNG; chatty status lines on
-  // stderr ("Wrote screenshot to: …") are discarded on success.
-  await simctl(udid, ["io", udid, "screenshot", path]);
+  try {
+    const wda = await ensureWda(target);
+    await Bun.write(path, await wda.screenshot());
+  } catch (err) {
+    if (target.kind === "device") throw err; // no second route exists
+    // Simulator fallback: WDA can fail (session wedged, runner restarting)
+    // while `simctl io` still works, and v1 shipped on that path.
+    await simctl(target.udid, ["io", target.udid, "screenshot", path]);
+  }
 
   // Read the REAL dimensions off the file — correct in landscape too, where a
   // device-catalog lookup would report the swapped portrait dims.
@@ -78,6 +94,6 @@ export async function captureFrame(udid: string, tag?: string): Promise<Frame> {
  * The `screenshot` MCP tool wraps this and adds `{scale, orientation}` from
  * the WDA session before returning to the agent.
  */
-export async function screenshot(udid: string): Promise<Frame> {
-  return captureFrame(udid);
+export async function screenshot(target: Target): Promise<Frame> {
+  return captureFrame(target);
 }
