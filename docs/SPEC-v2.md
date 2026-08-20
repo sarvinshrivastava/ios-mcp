@@ -1,7 +1,8 @@
 # ios-mcp v2 — Design Spec
 
 **Date:** 2026-08-20
-**Status:** Proposed (awaiting sign-off)
+**Status:** Implemented (P0–P3); device-side field verification pending a
+reachable phone. See "Outcomes vs. plan" at the end for where reality differed.
 **Builds on:** [`SPEC.md`](SPEC.md) (v1, simulator-only, shipped)
 
 ---
@@ -248,3 +249,36 @@ end to end on the connected iPhone; existing `verify-phase0.ts` /
 | `log collect` slow / needs trust | Time-boxed, scaled timeout, archive cleaned up; error names the window that timed out |
 | MJPEG recording quality on device | Documented as lower-fidelity; simulator keeps the native encoder |
 | Two WDA caches drift after an Xcode upgrade | Both keyed by Xcode build version; each reports its own "re-run `bun run setup [--device]`" |
+
+
+---
+
+## Outcomes vs. plan
+
+What the build changed about the design, and why:
+
+| Plan said | Reality | Consequence |
+|---|---|---|
+| Manual signing with `PROVISIONING_PROFILE_SPECIFIER=<uuid>` | Xcode 26.6 refuses: an Xcode-managed profile "requires a manually managed profile", and naming a profile breaks `WebDriverAgentLib` ("does not support provisioning profiles") | Automatic style pinned to `DEVELOPMENT_TEAM`, still with **no** `-allowProvisioningUpdates`. `signing.ts` keeps its role: prove the assets exist and provision the device *before* a 3-minute build, and record them in the manifest |
+| `iproxy` tunnel is how a device is reached | usbmux cannot see a Wi-Fi-paired phone at all (`idevice_id -l` empty), but `xcodebuild` launches the runner over CoreDevice anyway and WDA announces its own address (`ServerURLHere->http://…:8100<-`) | The announced address is parsed from the runner log and used directly. The tunnel is now a *preference* for genuinely cabled devices. The runner log is truncated per launch so a stale address cannot read as success |
+| `read_syslog` on device via `log collect --device-udid` | Needs root: "Must be root to collect logs from attached device" | Crash reports always (CoreDevice `systemCrashLogs`, unprivileged, over the network); log lines via `idevicesyslog` only when cabled, captured **live** for seconds. Both halves reported explicitly (decision taken with the operator) |
+| `visual_diff` / `record_screen` as designed | Unchanged | Verified on the simulator: 9 s recording → playable h264 1206×2622; `visual_diff` locates a known change and keeps antialiasing noise at 0 % |
+| Port tree-driven `full_page_screenshot` to android-mcp | Already shipped there | Dropped from scope |
+
+### Verified so far
+
+- **Device (iPhone 12, iOS 27.0, Wi-Fi):** signed WDA build, runner launch, WDA
+  ready in ~10 s, `/status`, `/wda/activeAppInfo`, `/source` (34 KB in 1.3 s),
+  `/wda/screen` scale 3 — `scripts/verify-device.ts` PASS.
+- **Simulator (iPhone 17 Pro, iOS 26.5):** `verify-phase0.ts` and
+  `verify-integration.ts` PASS on the unified WDA capture path; recording and
+  `visual_diff` exercised end to end.
+- **Unit:** 56 tests — uitree condensing, devicectl JSON shape, profile
+  matching, `visual_diff` geometry.
+
+### Still unverified (needs the phone reachable)
+
+`devicectl device info files` / `info processes` field names (crash listing and
+terminate-by-bundle-id), device `reset_app` (uninstall → install → launch), and
+device `record_screen` over WDA's MJPEG stream. Each is isolated in
+`devicectl.ts` / `recorder.ts`; the JSON field names are the likely breakage.
