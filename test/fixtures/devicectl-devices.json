@@ -1,0 +1,192 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "list",
+      "devices",
+      "--json-output",
+      "/private/tmp/claude-501/-Users-habuild/6e10e053-c656-462b-ac18-19a447a46cf6/scratchpad/devices.json"
+    ],
+    "commandType" : "devicectl.list.devices",
+    "environment" : {
+      "TERM" : "xterm-256color"
+    },
+    "jsonVersion" : 3,
+    "outcome" : "success",
+    "version" : "518.33"
+  },
+  "result" : {
+    "devices" : [
+      {
+        "capabilities" : [
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.tags",
+            "name" : "Modify Tags"
+          },
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.default.user.credentials",
+            "name" : "Modify credentials for default users for a device"
+          },
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.unpairdevice",
+            "name" : "Unpair Device"
+          }
+        ],
+        "connectionProperties" : {
+          "authenticationType" : "manualPairing",
+          "isMobileDeviceOnly" : false,
+          "lastConnectionDate" : "2026-07-10T05:36:00.000Z",
+          "pairingState" : "paired",
+          "potentialHostnames" : [
+            "Debasishs-iPhone.coredevice.local",
+            "13D57B45-DA9C-5C2F-AAEE-E77D6D034C1E.coredevice.local",
+            "00008101-001D04113E47001E.coredevice.local"
+          ],
+          "tunnelState" : "unavailable"
+        },
+        "deviceProperties" : {
+          "bootedFromSnapshot" : true,
+          "bootedSnapshotName" : "com.apple.os.update-FE5EB60A85668F7669B7FB734492615A620DEAFEB1A35B79F8F8B8BB3C8099F2",
+          "ddiServicesAvailable" : false,
+          "developerModeStatus" : "enabled",
+          "hasInternalOSBuild" : false,
+          "name" : "Debasish’s iPhone",
+          "osBuildUpdate" : "23A355",
+          "osVersionNumber" : "26.0.1",
+          "rootFileSystemIsWritable" : false,
+          "supportsCheckedAllocations" : false
+        },
+        "hardwareProperties" : {
+          "cpuType" : {
+            "name" : "arm64e",
+            "subType" : 2,
+            "type" : 16777228
+          },
+          "deviceType" : "iPhone",
+          "ecid" : 8167246430404638,
+          "hardwareModel" : "D53gAP",
+          "internalStorageCapacity" : 64000000000,
+          "isProductionFused" : true,
+          "marketingName" : "iPhone 12",
+          "platform" : "iOS",
+          "productType" : "iPhone13,2",
+          "reality" : "physical",
+          "serialNumber" : "GV4HN6680F0N",
+          "supportedCPUTypes" : [
+            {
+              "name" : "arm64e",
+              "subType" : 2,
+              "type" : 16777228
+            },
+            {
+              "name" : "arm64",
+              "subType" : 0,
+              "type" : 16777228
+            }
+          ],
+          "supportedDeviceFamilies" : [
+            1
+          ],
+          "thinningProductType" : "iPhone13,2",
+          "udid" : "00008101-001D04113E47001E"
+        },
+        "identifier" : "13D57B45-DA9C-5C2F-AAEE-E77D6D034C1E",
+        "tags" : [
+
+        ],
+        "visibilityClass" : "default"
+      },
+      {
+        "capabilities" : [
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.acquireusageassertion",
+            "name" : "Acquire Usage Assertion"
+          },
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.connectdevice",
+            "name" : "Connect to Device"
+          },
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.tags",
+            "name" : "Modify Tags"
+          },
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.default.user.credentials",
+            "name" : "Modify credentials for default users for a device"
+          },
+          {
+            "featureIdentifier" : "com.apple.coredevice.feature.unpairdevice",
+            "name" : "Unpair Device"
+          }
+        ],
+        "connectionProperties" : {
+          "authenticationType" : "manualPairing",
+          "isMobileDeviceOnly" : false,
+          "lastConnectionDate" : "2026-08-20T07:20:00.000Z",
+          "pairingState" : "paired",
+          "potentialHostnames" : [
+            "Himanshus-iPhone.coredevice.local",
+            "1F2B10B6-A456-59F7-8F86-DD08FD719910.coredevice.local",
+            "00008101-0011685C1422001E.coredevice.local"
+          ],
+          "transportType" : "localNetwork",
+          "tunnelState" : "disconnected",
+          "tunnelTransportProtocol" : "tcp"
+        },
+        "deviceProperties" : {
+          "bootedFromSnapshot" : true,
+          "bootedSnapshotName" : "com.apple.os.update-CC0E9B79B08B70112B2ECF0097F8C857CC7C0D616CAAC6B190306D36B380385A",
+          "ddiServicesAvailable" : false,
+          "developerModeStatus" : "enabled",
+          "hasInternalOSBuild" : false,
+          "name" : "Himanshu’s iPhone",
+          "osBuildUpdate" : "24A5380h",
+          "osVersionNumber" : "27.0",
+          "releaseType" : "Beta",
+          "rootFileSystemIsWritable" : false,
+          "screenViewingURL" : "devices://device/open?id=1F2B10B6-A456-59F7-8F86-DD08FD719910",
+          "supportsCheckedAllocations" : false
+        },
+        "hardwareProperties" : {
+          "cpuType" : {
+            "name" : "arm64e",
+            "subType" : 2,
+            "type" : 16777228
+          },
+          "deviceType" : "iPhone",
+          "ecid" : 4899819288133662,
+          "hardwareModel" : "D53gAP",
+          "internalStorageCapacity" : 64000000000,
+          "isProductionFused" : true,
+          "marketingName" : "iPhone 12",
+          "platform" : "iOS",
+          "productType" : "iPhone13,2",
+          "reality" : "physical",
+          "serialNumber" : "DNPDV33R0F0V",
+          "supportedCPUTypes" : [
+            {
+              "name" : "arm64e",
+              "subType" : 2,
+              "type" : 16777228
+            },
+            {
+              "name" : "arm64",
+              "subType" : 0,
+              "type" : 16777228
+            }
+          ],
+          "supportedDeviceFamilies" : [
+            1
+          ],
+          "thinningProductType" : "iPhone13,2",
+          "udid" : "00008101-0011685C1422001E"
+        },
+        "identifier" : "1F2B10B6-A456-59F7-8F86-DD08FD719910",
+        "tags" : [
+
+        ],
+        "visibilityClass" : "default"
+      }
+    ]
+  }
+}

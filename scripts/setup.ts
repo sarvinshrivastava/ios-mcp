@@ -1,36 +1,57 @@
 /**
  * setup.ts — one-time WebDriverAgent fetch + build-for-testing + cache.
  *
- * What it does:
- *   1. Installs the `appium-webdriveragent` npm package (which ships the full
- *      WDA Xcode project) into ~/.cache/ios-mcp/wda-src/ — self-contained,
- *      never touches this repo's package.json.
- *   2. `xcodebuild build-for-testing` against the generic iOS Simulator
- *      destination. No code signing — simulator builds need none. Fully
- *      local; nothing here talks to Apple's cloud.
- *   3. Caches the products + .xctestrun under
- *      ~/.cache/ios-mcp/wda/<xcode-build-version>/ with a manifest.json.
+ * Two build flavors, cached side by side under the Xcode build version:
  *
- * Idempotent: a valid existing cache for the current Xcode build is a no-op.
- * `bun run setup --force` rebuilds from scratch.
+ *   ~/.cache/ios-mcp/wda/<xcode-build>/sim/     — simulators, CODE_SIGNING_ALLOWED=NO
+ *   ~/.cache/ios-mcp/wda/<xcode-build>/device/  — real devices, manually signed
+ *
+ *   bun run setup            → simulator build (default, v1 behavior)
+ *   bun run setup --device   → real-device build
+ *   bun run setup --all      → both
+ *   … --force                → rebuild the selected flavor(s) from scratch
+ *
+ * Both builds are LOCAL. The device build signs with a certificate and a
+ * provisioning profile that are already installed on this Mac and never passes
+ * `-allowProvisioningUpdates`, which would register devices / mint profiles in
+ * Apple's Developer portal. If no local profile fits, setup fails and says
+ * which piece is missing (see signing.ts).
  */
 
 import { mkdir, readdir, rm } from "node:fs/promises";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { xcrun } from "../src/simctl.ts";
+import { selectSigningAssets, type SigningAssets } from "../src/signing.ts";
 
 const FORCE = process.argv.includes("--force");
+const WANT_DEVICE = process.argv.includes("--device") || process.argv.includes("--all");
+const WANT_SIM = process.argv.includes("--all") || !process.argv.includes("--device");
+/** `--udid <udid>`: require the profile to provision this specific device. */
+const UDID_ARG = (() => {
+  const i = process.argv.indexOf("--udid");
+  return i !== -1 ? process.argv[i + 1] : undefined;
+})();
 
 const CACHE_ROOT =
   process.env.IOS_MCP_WDA_HOME || join(homedir(), ".cache", "ios-mcp", "wda");
 const SRC_DIR = join(homedir(), ".cache", "ios-mcp", "wda-src");
 
+export type WdaKind = "sim" | "device";
+
 export interface WdaManifest {
+  kind: WdaKind;
   xcodeVersion: string; // "Xcode 26.6"
   xcodeBuild: string; // "17F113"
   xctestrun: string; // absolute path
   builtAt: string; // ISO timestamp
+  /** Signing provenance — device builds only. */
+  teamId?: string;
+  profileUuid?: string;
+  profileName?: string;
+  identityName?: string;
+  /** UDIDs the signing profile provisions; a target outside this list can't run. */
+  provisionedDevices?: string[];
 }
 
 async function sh(
@@ -87,119 +108,162 @@ async function findXctestrun(productsDir: string): Promise<string> {
   return join(productsDir, preferred);
 }
 
-async function main() {
-  const { version, build } = await xcodeVersion();
-  const cacheDir = join(CACHE_ROOT, build);
-  const manifestPath = join(cacheDir, "manifest.json");
-  const derivedDir = join(cacheDir, "derived");
-
-  // ---- idempotency check -------------------------------------------------
-  if (!FORCE) {
-    const existing = await Bun.file(manifestPath)
-      .json()
-      .catch(() => null);
-    if (
-      existing &&
-      existing.xcodeBuild === build &&
-      (await Bun.file(existing.xctestrun).exists())
-    ) {
-      console.log(
-        `WDA cache valid for ${version} (${build}) — nothing to do.\n` +
-          `  xctestrun: ${existing.xctestrun}\n` +
-          `  built:     ${existing.builtAt}\n` +
-          `Re-run with --force to rebuild.`,
-      );
-      return;
-    }
-  }
-
-  console.log(`Building WDA for ${version} (${build})...`);
-
-  // ---- 1. fetch WDA source ----------------------------------------------
+/** Fetch the WDA Xcode project (shipped inside the appium-webdriveragent npm package). */
+async function ensureSource(): Promise<string> {
   const wdaProject = join(
     SRC_DIR,
     "node_modules",
     "appium-webdriveragent",
     "WebDriverAgent.xcodeproj",
   );
-  const haveSource = await Bun.file(
-    join(wdaProject, "project.pbxproj"),
-  ).exists();
-  if (FORCE || !haveSource) {
-    console.log(`Fetching appium-webdriveragent into ${SRC_DIR} ...`);
-    await rm(SRC_DIR, { recursive: true, force: true });
-    await mkdir(SRC_DIR, { recursive: true });
-    await Bun.write(
-      join(SRC_DIR, "package.json"),
-      JSON.stringify(
-        {
-          name: "ios-mcp-wda-src",
-          private: true,
-          dependencies: { "appium-webdriveragent": "latest" },
-        },
-        null,
-        2,
-      ),
-    );
-    await sh(["bun", "install", "--cwd", SRC_DIR], {
-      timeoutMs: 300_000,
-      label: "bun install (appium-webdriveragent)",
-    });
-    if (!(await Bun.file(join(wdaProject, "project.pbxproj")).exists())) {
-      throw new Error(`WDA project not found after install: ${wdaProject}`);
+  if (await Bun.file(join(wdaProject, "project.pbxproj")).exists()) {
+    console.log(`WDA source already present at ${SRC_DIR}`);
+    return wdaProject;
+  }
+  console.log(`Fetching appium-webdriveragent into ${SRC_DIR} ...`);
+  await rm(SRC_DIR, { recursive: true, force: true });
+  await mkdir(SRC_DIR, { recursive: true });
+  await Bun.write(
+    join(SRC_DIR, "package.json"),
+    JSON.stringify(
+      {
+        name: "ios-mcp-wda-src",
+        private: true,
+        dependencies: { "appium-webdriveragent": "latest" },
+      },
+      null,
+      2,
+    ),
+  );
+  await sh(["bun", "install", "--cwd", SRC_DIR], {
+    timeoutMs: 300_000,
+    label: "bun install (appium-webdriveragent)",
+  });
+  if (!(await Bun.file(join(wdaProject, "project.pbxproj")).exists())) {
+    throw new Error(`WDA project not found after install: ${wdaProject}`);
+  }
+  return wdaProject;
+}
+
+/**
+ * build-for-testing for one flavor and write its manifest.
+ *
+ * Simulator: no signing at all. Device: automatic signing pinned to one team,
+ * with the profile that signing.ts already proved exists locally and covers the
+ * target device — see the argument list for why automatic beats manual here.
+ */
+async function buildFlavor(
+  kind: WdaKind,
+  wdaProject: string,
+  version: string,
+  build: string,
+  signing?: SigningAssets,
+): Promise<WdaManifest> {
+  const cacheDir = join(CACHE_ROOT, build, kind);
+  const derivedDir = join(cacheDir, "derived");
+  const manifestPath = join(cacheDir, "manifest.json");
+
+  if (!FORCE) {
+    const existing = (await Bun.file(manifestPath).json().catch(() => null)) as WdaManifest | null;
+    if (
+      existing &&
+      existing.xcodeBuild === build &&
+      (await Bun.file(existing.xctestrun).exists())
+    ) {
+      console.log(
+        `WDA ${kind} cache valid for ${version} (${build}) — nothing to do.\n` +
+          `  xctestrun: ${existing.xctestrun}\n` +
+          `  built:     ${existing.builtAt}\n` +
+          `Re-run with --force to rebuild.`,
+      );
+      return existing;
     }
   } else {
-    console.log(`WDA source already present at ${SRC_DIR}`);
+    await rm(cacheDir, { recursive: true, force: true });
   }
 
-  // ---- 2. build-for-testing (local only, no signing, no cloud) -----------
-  if (FORCE) await rm(cacheDir, { recursive: true, force: true });
   await mkdir(cacheDir, { recursive: true });
-  console.log("Running xcodebuild build-for-testing (~3-5 min)...");
-  await sh(
-    [
-      "xcodebuild",
-      "build-for-testing",
-      "-project",
-      wdaProject,
-      "-scheme",
-      "WebDriverAgentRunner",
-      "-destination",
-      "generic/platform=iOS Simulator",
-      "-derivedDataPath",
-      derivedDir,
-      "CODE_SIGNING_ALLOWED=NO",
-    ],
-    { timeoutMs: 600_000, label: "xcodebuild build-for-testing" },
-  );
+  console.log(`Running xcodebuild build-for-testing (${kind}, ~3-5 min)...`);
 
-  // ---- 3. manifest ---------------------------------------------------------
+  const common = [
+    "xcodebuild",
+    "build-for-testing",
+    "-project",
+    wdaProject,
+    "-scheme",
+    "WebDriverAgentRunner",
+    "-derivedDataPath",
+    derivedDir,
+  ];
+  const args =
+    kind === "sim"
+      ? [...common, "-destination", "generic/platform=iOS Simulator", "CODE_SIGNING_ALLOWED=NO"]
+      : [
+          ...common,
+          "-destination",
+          "generic/platform=iOS",
+          // Automatic style, team only — deliberately NOT manual with an
+          // explicit profile. Verified on Xcode 26.6: manual signing rejects
+          // the only profiles that exist here ("… is Xcode managed, but signing
+          // settings require a manually managed profile"), and naming a profile
+          // also breaks the framework target ("WebDriverAgentLib does not
+          // support provisioning profiles"). Automatic picks the same local
+          // profile that signing.ts validated.
+          //
+          // `-allowProvisioningUpdates` is NEVER passed: it registers devices
+          // and mints profiles in Apple's Developer portal. Without it Xcode
+          // may only use assets already on this Mac, which is the whole point.
+          "CODE_SIGN_STYLE=Automatic",
+          `DEVELOPMENT_TEAM=${signing!.identity.teamId}`,
+        ];
+
+  await sh(args, { timeoutMs: 900_000, label: `xcodebuild build-for-testing (${kind})` });
+
   const xctestrun = await findXctestrun(join(derivedDir, "Build", "Products"));
   const manifest: WdaManifest = {
+    kind,
     xcodeVersion: version,
     xcodeBuild: build,
     xctestrun,
     builtAt: new Date().toISOString(),
+    ...(signing
+      ? {
+          teamId: signing.identity.teamId,
+          profileUuid: signing.profile.uuid,
+          profileName: signing.profile.name,
+          identityName: signing.identity.name,
+          provisionedDevices: signing.profile.devices,
+        }
+      : {}),
   };
   await Bun.write(manifestPath, JSON.stringify(manifest, null, 2));
+  console.log(`WDA ${kind} build cached.\n  xctestrun: ${xctestrun}\n  manifest:  ${manifestPath}`);
+  return manifest;
+}
 
-  // Keep the simulator's software keyboard alive — a connected hardware
-  // keyboard swallows the on-screen one and breaks type_into.
-  await sh(
-    [
-      "defaults",
-      "write",
-      "com.apple.iphonesimulator",
-      "ConnectHardwareKeyboard",
-      "-bool",
-      "false",
-    ],
-    { label: "defaults write ConnectHardwareKeyboard" },
-  ).catch((err) => console.warn(`(non-fatal) ${err}`));
+async function main() {
+  const { version, build } = await xcodeVersion();
+  const wdaProject = await ensureSource();
 
-  console.log(
-    `WDA build cached.\n  xctestrun: ${xctestrun}\n  manifest:  ${manifestPath}`,
-  );
+  if (WANT_SIM) {
+    await buildFlavor("sim", wdaProject, version, build);
+    // Keep the simulator's software keyboard alive — a connected hardware
+    // keyboard swallows the on-screen one and breaks type_into.
+    await sh(
+      ["defaults", "write", "com.apple.iphonesimulator", "ConnectHardwareKeyboard", "-bool", "false"],
+      { label: "defaults write ConnectHardwareKeyboard" },
+    ).catch((err) => console.warn(`(non-fatal) ${err}`));
+  }
+
+  if (WANT_DEVICE) {
+    const signing = await selectSigningAssets({ udid: UDID_ARG });
+    console.log(
+      `Signing WDA for device with:\n` +
+        `  identity: ${signing.identity.name} (team ${signing.identity.teamId})\n` +
+        `  profile:  ${signing.profile.name} [${signing.profile.uuid}] — ${signing.profile.devices.length} device(s)`,
+    );
+    await buildFlavor("device", wdaProject, version, build, signing);
+  }
 }
 
 if (import.meta.main) {
