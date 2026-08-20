@@ -82,3 +82,45 @@ no Apple Developer portal calls.
 | Signed `build-for-testing` (one-time, per Xcode version) | ~2–4 min |
 | WDA cold start (runner launch → `/status` ready) | ~10 s |
 | `/source` full tree dump (Settings app) | ~1.3 s, 34 KB |
+
+## Device logs and resets: what Apple does NOT allow
+
+- **`log collect --device-udid <udid>` needs root**: `log: Must be root to
+  collect logs from attached device`. So there is no unprivileged way to read a
+  device's PAST unified log. (Note `log` must be called as `/usr/bin/log` from
+  zsh scripts — a bare `log` hits the shell's own parsing and errors with
+  "too many arguments".)
+- `devicectl` has **no** console/log subcommand at all (Xcode 26.6). The only
+  streaming options are `devicectl device process launch --console`, which
+  RELAUNCHES the app and captures only from launch onward, and `idevicesyslog`,
+  which rides usbmux and therefore needs a cable.
+- Consequence for a tool: on a device, crash reports are always available
+  (CoreDevice's `systemCrashLogs` domain, over the network, no privileges) but
+  log lines are USB-only and forward-looking. Say so in the response — an empty
+  `lines: []` otherwise reads as "the app logged nothing".
+- **`devicectl device copy` has `to`/`from` and no delete verb**, so an app's
+  data container cannot be emptied in place. A real "reset to first run" on a
+  device is uninstall + install; anything else (terminate + relaunch) clears
+  nothing and just over-promises.
+
+## The device drops off
+
+A network-paired phone goes `tunnelState: "unavailable"` the moment it sleeps or
+leaves the Wi-Fi, and every devicectl call then fails with
+`CoreDeviceService was unable to locate a device matching the requested device
+identifier` (code 1011) — note the identifier in that message is an `ecid_…`
+form, not the id you passed. Treat it as "reconnect the device", not as a bug.
+
+## Recording and diffing
+
+- Simulator recording is `simctl io <udid> recordVideo --codec h264` — must be
+  stopped with **SIGINT**; SIGTERM/SIGKILL leaves an unplayable container.
+  Same for ffmpeg.
+- Device recording has no native encoder reachable from here: WDA's MJPEG
+  server (device port 9100) piped into ffmpeg is the option, and it only serves
+  frames while a WDA session is alive.
+- For pixel comparison, greyscale raw bytes are enough to locate change and keep
+  a full-screen diff cheap; a per-cell grid plus a connected-component merge
+  turns "3.7% of pixels differ" into a couple of boxes worth acting on. A
+  minimum changed-pixel count per cell is what stops antialiasing from lighting
+  up the whole grid.
